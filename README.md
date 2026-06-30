@@ -1,13 +1,15 @@
 # SpotConnect Home Assistant Addon
 
-Exposes AirPlay devices (HomePods, etc.) as Spotify Connect speakers.
+Make HomePod a Spotify Connect Device on Spotify. Just install — it should work! There is no dependency on OwnTone.
 
 ## Installation
 
 1. In HA, go to **Settings → Add-ons → Add-on Store → ⋮ → Repositories**
-2. Add this repository URL
+2. Add `https://github.com/vin-w/hass-spotconnect-addons`
 3. Find **SpotConnect** and install it
-4. Configure mode (`raop` for AirPlay/HomePods) and start
+4. Set mode to `raop` for HomePods, then start
+
+That's it. HomePods will appear as Spotify Connect devices in your Spotify app.
 
 ## Configuration
 
@@ -17,8 +19,8 @@ Exposes AirPlay devices (HomePods, etc.) as Spotify Connect speakers.
 | `puid` | `1000` | User ID |
 | `pgid` | `1000` | Group ID |
 | `vorbis_bitrate` | `320` | Audio quality: 96, 160, or 320 kbps |
-| `store_cred_xml` | `false` | Persist Spotify credentials |
-| `log_level_raop` | `info` | Log verbosity |
+| `store_cred_xml` | `false` | Persist Spotify credentials for faster reconnect |
+| `log_level_raop` | `info` | Log verbosity: error, warn, info, debug, sdebug |
 
 ## Requirements
 

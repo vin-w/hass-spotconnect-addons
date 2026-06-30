@@ -1,9 +1,11 @@
 name: SpotConnect
-version: "0.20.2"
+version: "1.0.0"
 slug: spotconnect
 description: >-
   Expose AirPlay and UPnP devices as Spotify Connect speakers.
   Use raop mode for HomePods, upnp for Sonos/UPnP devices.
+url: https://github.com/vin-w/hass-spotconnect-addons
+changelog: https://github.com/vin-w/hass-spotconnect-addons/releases
 arch:
   - armv7
   - armhf
