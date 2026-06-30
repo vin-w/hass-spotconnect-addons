@@ -32,6 +32,8 @@ fi
 
 # Ensure config file exists so SpotConnect doesn't error on startup
 mkdir -p /config
-touch /config/config.xml
+if [ ! -s /config/config.xml ]; then
+  printf '<?xml version="1.0" encoding="UTF-8"?>\n<spotraop/>\n' > /config/config.xml
+fi
 
 exec /app/bin/run.sh
