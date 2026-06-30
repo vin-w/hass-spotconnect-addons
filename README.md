@@ -8,6 +8,8 @@ Make HomePod a Spotify Connect Device on Spotify. Just install — it should wor
 
 [![Add Repository](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fvin-w%2Fhass-spotconnect-addons)
 
+[![Install SpotConnect](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=596e97f2_spotconnect&repository_url=https%3A%2F%2Fgithub.com%2Fvin-w%2Fhass-spotconnect-addons)
+
 Or manually:
 
 1. In HA, go to **Settings → Add-ons → Add-on Store → ⋮ → Repositories**
