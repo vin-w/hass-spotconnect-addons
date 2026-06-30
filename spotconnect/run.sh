@@ -1,12 +1,20 @@
 #!/usr/bin/env bash
-# Map HAOS addon options to SpotConnect environment variables
+# Read HAOS addon options from /data/options.json and map to SpotConnect env vars
 
-export SPOTCONNECT_MODE="${MODE:-raop}"
-export PUID="${PUID:-1000}"
-export PGID="${PGID:-1000}"
-export VORBIS_BITRATE="${VORBIS_BITRATE:-320}"
-export STORE_CRED_XML="${STORE_CRED_XML:-no}"
-export LOG_LEVEL_RAOP="${LOG_LEVEL_RAOP:-info}"
+CONFIG="/data/options.json"
 
-# Run the original entrypoint
+if [ -f "$CONFIG" ]; then
+  export SPOTCONNECT_MODE="$(jq -r '.mode // "raop"' "$CONFIG")"
+  export PUID="$(jq -r '.puid // 1000' "$CONFIG")"
+  export PGID="$(jq -r '.pgid // 1000' "$CONFIG")"
+  export VORBIS_BITRATE="$(jq -r '.vorbis_bitrate // 320' "$CONFIG")"
+  STORE_CRED="$(jq -r '.store_cred_xml // false' "$CONFIG")"
+  if [ "$STORE_CRED" = "true" ]; then
+    export STORE_CRED_XML="yes"
+  else
+    export STORE_CRED_XML="no"
+  fi
+  export LOG_LEVEL_RAOP="$(jq -r '.log_level_raop // "info"' "$CONFIG")"
+fi
+
 exec /entrypoint.sh
