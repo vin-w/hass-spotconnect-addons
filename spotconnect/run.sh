@@ -30,4 +30,8 @@ if [ -f "$CONFIG" ]; then
   [ -z "$LOG_LEVEL_RAOP" ] && LOG_LEVEL_RAOP="info"
 fi
 
+# Ensure config file exists so SpotConnect doesn't error on startup
+mkdir -p /config
+touch /config/config.xml
+
 exec /app/bin/run.sh
