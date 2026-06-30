@@ -17,4 +17,4 @@ if [ -f "$CONFIG" ]; then
   export LOG_LEVEL_RAOP="$(jq -r '.log_level_raop // "info"' "$CONFIG")"
 fi
 
-exec /entrypoint.sh
+exec /app/bin/run.sh
