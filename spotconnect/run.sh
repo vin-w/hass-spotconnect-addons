@@ -4,8 +4,8 @@
 CONFIG="/data/options.json"
 
 if [ -f "$CONFIG" ]; then
-  # Parse JSON without jq — extract values between quotes after key
-  extract() { grep -o "\"$1\"[[:space:]]*:[[:space:]]*\"\\?[^\"]*\"\\?" "$CONFIG" | head -1 | sed 's/.*://; s/^[[:space:]]*//; s/^"//; s/"$//'; }
+  # Parse JSON without jq — extract values, strip trailing commas/spaces
+  extract() { grep -o "\"$1\"[[:space:]]*:[[:space:]]*\"\\?[^,}\"]*\"\\?" "$CONFIG" | head -1 | sed 's/.*://; s/^[[:space:]]*//; s/^"//; s/"$//; s/[[:space:]]*,//'; }
 
   export SPOTCONNECT_MODE="$(extract mode)"
   [ -z "$SPOTCONNECT_MODE" ] && SPOTCONNECT_MODE="raop"
