@@ -1,4 +1,4 @@
-FROM giof71/spotconnect:0.20.1
+FROM giof71/spotconnect:stable
 
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
