@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # Read HAOS addon options from /data/options.json and map to SpotConnect env vars
 
 CONFIG="/data/options.json"
