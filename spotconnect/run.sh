@@ -28,6 +28,7 @@ if [ -f "$CONFIG" ]; then
 
   export LOG_LEVEL_RAOP="$(extract log_level_raop)"
   [ -z "$LOG_LEVEL_RAOP" ] && LOG_LEVEL_RAOP="info"
+  export LOG_LEVEL_ALL="$LOG_LEVEL_RAOP"
 fi
 
 # Ensure config file exists so SpotConnect doesn't error on startup
