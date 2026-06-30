@@ -1,0 +1,19 @@
+configuration:
+  mode:
+    name: Mode
+    description: AirPlay mode for HomePods, UPnP for other devices
+  puid:
+    name: User ID
+    description: User ID for the process
+  pgid:
+    name: Group ID
+    description: Group ID for the process
+  vorbis_bitrate:
+    name: Vorbis Bitrate
+    description: Spotify audio quality (96, 160, or 320 kbps)
+  store_cred_xml:
+    name: Store Credentials
+    description: Persist Spotify credentials in config file for faster reconnection
+  log_level_raop:
+    name: Log Level
+    description: Logging verbosity for AirPlay mode
